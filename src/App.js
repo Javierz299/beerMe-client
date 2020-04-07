@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Nav from './Components/Nav/Nav'
 import LandingPage from './Components/LandingPage/LandingPage'
-import PublicOnlyRoute from './Utils/PublicOnlyRoute/PublicOnlyRoute'
+import PublicOnlyRoute from './Utils/PublicOnlyroutes/PublicOnlyRoute'
+import LoginPage from './Routes/LoginPage/LoginPage'
 import { Route, Link, Switch } from 'react-router-dom'
 import './App.css';
 
@@ -19,6 +20,7 @@ class App extends Component {
     <div>
       <Switch>
          <Route exact path={"/"} component={LandingPage}/>
+         <Route path={"/login"} component={LoginPage}/>
       </Switch>
     </div>
 
