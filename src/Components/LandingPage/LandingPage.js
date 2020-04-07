@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Nav extends Component {
+export class LandingPage extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ export class Nav extends Component {
     }
 }
 
-export default Nav
+export default LandingPage
