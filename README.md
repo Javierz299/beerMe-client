@@ -1,3 +1,21 @@
+App Name: BeerMe
+
+an app that will allow you to log your daily alcoholic drink
+intake. will keep track of you daily, weekly and monthly and yearly consumption.
+
+currently need to start working on the landing page
+followed by user sign up.
+
+followed by user profile and being able to log/view their data of what they consumed. e.g beer, liquor, wine
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
