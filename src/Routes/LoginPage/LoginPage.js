@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 
-export class LoginPage extends Component {
+class LoginPage extends Component {
 
     handleLoginSuccess = () => {
-        console.log('Reached')
-        console.log(this.props)
+        const { location, history } = this.props
+        const destination = (location.state || {}).from || '/' 
+        history.push(destination)
     }
 
     render() {

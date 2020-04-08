@@ -11,10 +11,9 @@ const AuthApiService = {
             },
             body: JSON.stringify({ username, password})
         })
-        .then(res => {
-            res.json()
-            }
+        .then(res => res.json()
         )
+        .then(data => data)
     },
     refreshToken(){
         return fetch(`${config.API_ENPOINT}/auth/token`, {

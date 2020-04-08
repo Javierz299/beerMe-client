@@ -20,7 +20,7 @@ class App extends Component {
     <div>
       <Switch>
          <Route exact path={"/"} component={LandingPage}/>
-         <Route path={"/login"} component={LoginPage}/>
+         <PublicOnlyRoute path={"/login"} component={LoginPage}/>
       </Switch>
     </div>
 

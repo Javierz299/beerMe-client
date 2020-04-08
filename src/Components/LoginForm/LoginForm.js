@@ -9,21 +9,21 @@ class LoginForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        
         const { username, user_password } = e.target
             console.log(username.value,user_password.value)
         
-            AuthApiService.postLogin({
+        AuthApiService.postLogin({
             username: username.value,
             password: user_password.value
         })
-        .then( res => { 
-            username.value = ""
-            user_password.value = ""
+        .then(res=> {
+            console.log('res',res)
             TokenService.saveAuthToken(res.authToken)
             this.props.onLoginSuccess()
         })
-        .catch(res => {
-            this.setState({ error: res.error})
+        .catch(response => {
+            this.setState({ error: response.error})
         })
     }
 
