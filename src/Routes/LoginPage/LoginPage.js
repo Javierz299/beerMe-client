@@ -4,6 +4,7 @@ import LoginForm from '../../Components/LoginForm/LoginForm'
 class LoginPage extends Component {
 
     handleLoginSuccess = () => {
+       
         const { location, history } = this.props
         const destination = (location.state || {}).from || '/' 
         history.push(destination)
