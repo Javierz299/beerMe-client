@@ -18,24 +18,28 @@ class SignUpForm extends Component {
             password: password.value
         })
         .then(res => {
+            if(res.error){
+                this.setState({error: res.error})
+            } else {
             first_name.value = ""
             last_name.value = ""
             username.value = ""
             password.value = ""
             this.props.onSignUpSuccess()
-        })
-        .catch(res => {
-            this.setState({ error: res.error})
+            }
         })
 
     }
 
 
     render() {
+        const { error } = this.state
         return (
             <form onSubmit={this.handleSubmit}>
                 <fieldset>
                 <legend>Sign Up</legend>
+                
+            <div>{error && <p>{error}</p> }</div>
            
              <div>
                 <label htmlFor="first_name">First Name:</label>

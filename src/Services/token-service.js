@@ -3,7 +3,6 @@ import config from '../config/config'
 
 const TokenService = {
     saveAuthToken(token){
-        console.log('reached',token)
         window.sessionStorage.setItem(config.TOKEN_KEY, token)
     },
     getAuthToken(){
