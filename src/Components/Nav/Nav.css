@@ -1,0 +1,10 @@
+.nav-links{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-links li{
+    list-style: none;
+    padding: 5px;
+}
