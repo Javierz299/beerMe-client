@@ -18,12 +18,14 @@ class LoginForm extends Component {
             password: user_password.value
         })
         .then(res => {
-            TokenService.saveAuthToken(res.authToken)
-            this.props.onLoginSuccess()
+            if(res.error){
+                this.setState({error: res.error})
+            } else {
+                TokenService.saveAuthToken(res.authToken)
+                this.props.onLoginSuccess()
+            }
         })
-        .catch(response => {
-            this.setState({ error: response.error})
-        })
+        
     }
 
     render() {
