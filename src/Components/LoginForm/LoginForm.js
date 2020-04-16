@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../Services/auth-api-service'
 import TokenService from '../../Services/token-service'
+import '../LoginForm/LoginForm.css'
 
 class LoginForm extends Component {
     state = {
@@ -31,15 +32,15 @@ class LoginForm extends Component {
     render() {
         const { error } = this.state
         return (
-            <form id="LoginForm" onSubmit={this.handleSubmit}>
-                <div>
+            <form id="Login-Form" onSubmit={this.handleSubmit}>
+                <div className="login-form-inputs">
                   {error && (<p> {error} </p>)}
                 </div>
-                <div>
+                <div className="login-form-inputs">
                     <label htmlFor="Login_User_Name">User Name:</label>
                     <input required name="username" id="Login_User_Name" placeholder="username" />
                 </div>
-                <div>
+                <div className="login-form-inputs">
                     <label htmlFor="Login_User_Password">Password:</label>
                     <input required name="user_password" id="Login_User_Password" placeholder="password" type="password"/>
                 </div>

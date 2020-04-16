@@ -1,0 +1,17 @@
+
+.signup-form-container{
+    /* border: 1px solid black; */
+    margin: 1rem auto 0 auto;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+#sign-up-form{
+    margin: 0 auto 0 auto;
+    text-align: center;
+   
+}
+
+.sign-up-inputs{
+    padding: 5px;
+}

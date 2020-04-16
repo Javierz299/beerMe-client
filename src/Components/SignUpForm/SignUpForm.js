@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../Services/auth-api-service'
+import '../SignUpForm/SignUpForm.css'
+
 
 class SignUpForm extends Component {
     state = {
@@ -35,31 +37,33 @@ class SignUpForm extends Component {
     render() {
         const { error } = this.state
         return (
-            <form onSubmit={this.handleSubmit}>
+            <div className="signup-form-container">
+            <form id="sign-up-form" onSubmit={this.handleSubmit}>
                 <fieldset>
                 <legend>Sign Up</legend>
                 
             <div>{error && <p>{error}</p> }</div>
            
-             <div>
+             <div className="sign-up-inputs">
                 <label htmlFor="first_name">First Name:</label>
                 <input required id="first_name" name="first_name" placeholder="first name"/>
             </div>
-            <div>
+            <div className="sign-up-inputs">
                 <label htmlFor="last_name">Last Name:</label>
                 <input required id="last_name" name="last_name" placeholder="last name"/>
             </div>
-            <div>
+            <div className="sign-up-inputs">
                 <label>Username:</label>
                 <input required id="username" name="username" placeholder="username" />
             </div>
-            <div>
+            <div className="sign-up-inputs">
                 <label htmlFor="password" >Password:</label>
                 <input required id="password" name="password" placeholder="password" />
             </div>
             <button type="submit">Submit</button>
                 </fieldset>
             </form>
+            </div>
         )
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoginForm from '../../Components/LoginForm/LoginForm'
+import '../LoginPage/LoginPage.css'
 
 class LoginPage extends Component {
 
@@ -12,7 +13,7 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div>
+            <div id="login-form-container">
                 <LoginForm 
                     onLoginSuccess={this.handleLoginSuccess}
                 />
