@@ -1,12 +1,38 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../Services/auth-api-service'
 import TokenService from '../../Services/token-service'
+import config from '../../config/config'
+
 import '../LoginForm/LoginForm.css'
 
 class LoginForm extends Component {
-    state = {
-        error: null
+    constructor(props){
+        super(props)
+
+        this.state = {
+            error: null
+        }
     }
+    
+
+    
+    handleLoginSuccess = (user_id) => {
+        console.log(this.props)
+        const { history } = this.props
+        history.push(`/`)
+
+        fetch(`${config.API_ENPOINT}/alcohol/${user_id}/MyCount`, {
+            method: 'GET',
+            headers: {
+              authorization : `bearer ${TokenService.getAuthToken()}`,
+            }
+          })
+          .then(res => res)
+          .then(res => this.props.alcoholCount(res.json()))
+        
+        
+    }
+
 
     handleSubmit = (e) => {
         e.preventDefault()
@@ -20,11 +46,13 @@ class LoginForm extends Component {
         })
         .then(res => {
             if(res.error){
+                console.log('error reached')
                 this.setState({error: res.error})
             } else {
                 TokenService.saveAuthToken(res.authToken)
-                this.props.onLoginSuccess()
+                this.handleLoginSuccess(res.user_id)
             }
+            
         })
         
     }
@@ -41,8 +69,8 @@ class LoginForm extends Component {
                     <input required name="username" id="Login_User_Name" placeholder="username" />
                 </div>
                 <div className="login-form-inputs">
-                    <label htmlFor="Login_User_Password">Password:</label>
-                    <input required name="user_password" id="Login_User_Password" placeholder="password" type="password"/>
+                    <label htmlFor="Login_User_Password">Password:</label>                  {/*   type="password" */}
+                    <input required name="user_password" id="Login_User_Password" placeholder="password"  />
                 </div>
                 <div>
                     <button type="submit">Login</button>

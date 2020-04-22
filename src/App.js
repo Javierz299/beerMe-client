@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import Nav from './Components/Nav/Nav'
 import LandingPage from './Components/LandingPage/LandingPage'
+
 import PublicOnlyRoute from './Utils/PublicOnlyroutes/PublicOnlyRoute'
-import LoginPage from './Routes/LoginPage/LoginPage'
+import PrivateRoute from './Utils/PrivateRoute/PrivateRoute'
+
+import LoginForm from './Components/LoginForm/LoginForm'
 import SignUpPage from './Routes/SignUpPage/SignUpPage'
+import ProfileRoute from './Routes/ProfileRoute/ProfileRoute'
+import ProfilePage from './Components/ProfilePage/ProfilePage'
+
 import { Route, Switch } from 'react-router-dom'
 import './App.css';
 
@@ -21,9 +27,9 @@ class App extends Component {
     <div>
       <Switch>
          <Route exact path={"/"} component={LandingPage}/>
-         <PublicOnlyRoute path={"/login"} component={LoginPage}/>
+         <PublicOnlyRoute path={"/login"} component={LoginForm}/>
          <PublicOnlyRoute path={"/sign-up"} component={SignUpPage}/>
-
+         <PrivateRoute path={"/profile"} component={ProfileRoute}/>
       </Switch>
     </div>
 
