@@ -42,7 +42,7 @@ class LoginForm extends Component {
                 </div>
                 <div className="login-form-inputs">
                     <label htmlFor="Login_User_Password">Password:</label>
-                    <input required name="user_password" id="Login_User_Password" placeholder="password" type="password"/>
+                    <input required name="user_password" id="Login_User_Password" placeholder="password" />
                 </div>
                 <div>
                     <button type="submit">Login</button>
