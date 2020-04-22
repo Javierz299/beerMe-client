@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from './Components/Nav/Nav'
 import LandingPage from './Components/LandingPage/LandingPage'
 import PublicOnlyRoute from './Utils/PublicOnlyroutes/PublicOnlyRoute'
-import PrivateRoute from './Utils/PublicOnlyroutes/PrivateRoute/PrivateRoute'
+import PrivateRoute from './Utils/PrivateRoute/PrivateRoute'
 
 import LoginPage from './Routes/LoginPage/LoginPage'
 import SignUpPage from './Routes/SignUpPage/SignUpPage'
@@ -12,6 +12,8 @@ import { Route, Switch } from 'react-router-dom'
 import './App.css';
 
 class App extends Component {
+
+
 
   render(){
   return (
